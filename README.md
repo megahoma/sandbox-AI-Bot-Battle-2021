@@ -1,4 +1,4 @@
-Snake bot for tournament AI Bot Battles
+Snake bot for tournament [AI Bot Battles](http://aicup.mf.grsu.by)
 ====
 
 # Local testing 
