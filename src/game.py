@@ -147,6 +147,7 @@ class Game:
                     0, prefix + ' and they had the same amount of points')
 
     def run_one_step(self, timeout=1, requestTimeout=2):
+        directions = [UP, DOWN, LEFT, RIGHT]
         """
         Run one step of the game. 
         If any of snakes died, then finish the game
@@ -169,6 +170,9 @@ class Game:
         except Exception as e:
             self.end_game(2, e.__str__())
 
+        if d1 not in directions:
+            self.end_game(2, f"Invalid direction for 1st: {d1}")
+
         try:
             d2 = self.bot2_runner.run(
                 timeout=timeout, requestTimeout=requestTimeout)
@@ -176,6 +180,9 @@ class Game:
             self.end_game(1, 'took too long to make a decision for 2nd')
         except Exception as e:
             self.end_game(1, e.__str__())
+
+        if d2 not in directions:
+            self.end_game(1, f"Invalid direction for 2st: {d2}")
 
         try:
             grow1 = self.snake1.head.moveTo(d1) == self.appleCoordinate
