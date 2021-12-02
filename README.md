@@ -87,7 +87,7 @@ The game ends when **at least one** snake is dead
 
 A snake considered **dead** if at least one of the following conditions is true:
 
-1. The number game iterations (moves) exceeded 180
+1. The number game iterations (moves) exceeded 500
 2. Evaluation of `chooseDirection` of a snake exceeded 1 second
 3. During execution of `chooseDirection` of a snake, an exception was raised.
 4. Method `chooseDirection` of a snake returned neither UP, DOWN, LEFT, nor RIGHT (variables from `src.geometry`)
