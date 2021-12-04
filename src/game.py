@@ -1,4 +1,5 @@
-import random
+from random import Random
+random = Random()
 from itertools import chain
 from typing import Tuple, Union
 import logging
